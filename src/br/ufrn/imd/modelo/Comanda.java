@@ -2,7 +2,7 @@ package br.ufrn.imd.modelo;
 
 import java.util.ArrayList;
 
-public class Comanda {
+public class Comanda implements CalculoValorTotal {
 	
 	private ArrayList<Pedido> pedidos;
 	private double valorTotal = 0;
@@ -37,6 +37,7 @@ public class Comanda {
 		System.out.println("************************************");
 	}
 	
+	@Override
 	public void calcularValorTotal() {
 		double soma = getValorTotal();
 		for(Pedido pedido : pedidos) {

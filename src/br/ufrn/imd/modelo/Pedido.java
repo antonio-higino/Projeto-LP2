@@ -2,7 +2,7 @@ package br.ufrn.imd.modelo;
 
 import java.util.ArrayList;
 
-public class Pedido {
+public class Pedido implements CalculoValorTotal {
 	
 	private int id;
 	private ArrayList<Item> itens;
@@ -54,6 +54,7 @@ public class Pedido {
 		System.out.println("************************************");
 	}
 	
+	@Override
 	public void calcularValorTotal() {
 		double soma = getValorTotal();
 		for(Item item : itens) {

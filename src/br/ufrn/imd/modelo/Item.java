@@ -1,14 +1,14 @@
 package br.ufrn.imd.modelo;
 
-public class Item {
+public abstract class Item {
 	
 	private int id;
 	private String nome;
 	private double preco;
 	
-	public Item() {
+	/*public Item() {
 		
-	}
+	}*/
 	
 	public int getId() {
 		return id;
