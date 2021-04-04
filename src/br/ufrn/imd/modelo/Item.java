@@ -4,6 +4,7 @@ public abstract class Item {
 	
 	private int id;
 	private String nome;
+	//private String descricao;
 	private double preco;
 	
 	/*public Item() {

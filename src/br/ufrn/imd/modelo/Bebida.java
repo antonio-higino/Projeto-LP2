@@ -33,4 +33,22 @@ public class Bebida extends Item {
 	public void setDiet(boolean diet) {
 		this.diet = diet;
 	}
+	
+	public String booleanToString() {
+		String output = "";
+		
+		if(isDiet()) {
+			output += " É DIET";
+		}else {
+			output += " NÃO É DIET";
+		}
+		
+		if(isLight()) {
+			output += " É LIGHT";
+		}else {
+			output += " NÃO É LIGHT";
+		}
+		
+		return output;
+	}
 }

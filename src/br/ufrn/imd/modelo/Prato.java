@@ -33,4 +33,16 @@ public class Prato extends Item {
 	public void setContemGluten(boolean contemGluten) {
 		this.contemGluten = contemGluten;
 	}
+	
+	public String booleanToString() {
+		String output = "";
+		
+		if(isContemGluten()) {
+			output += " CONTÉM GLÚTEN";
+		}else {
+			output += " NÃO CONTÉM GLÚTEN";
+		}
+		
+		return output;
+	}
 }

@@ -16,6 +16,7 @@ public class Comanda implements CalculoValorTotal {
 	}
 
 	public double getValorTotal() {
+		calcularValorTotal();
 		return valorTotal;
 	}
 
@@ -39,7 +40,7 @@ public class Comanda implements CalculoValorTotal {
 	
 	@Override
 	public void calcularValorTotal() {
-		double soma = getValorTotal();
+		double soma = 0;
 		for(Pedido pedido : pedidos) {
 			soma += pedido.getValorTotal();
 		}
