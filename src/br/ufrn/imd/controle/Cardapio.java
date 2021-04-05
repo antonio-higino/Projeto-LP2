@@ -41,4 +41,6 @@ public class Cardapio {
 		}
 		System.out.println("************************************");
 	}
+	
+	public void listarTudo() {}
 }

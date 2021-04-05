@@ -34,6 +34,7 @@ public class Pedido implements CalculoValorTotal {
 	}
 
 	public double getValorTotal() {
+		calcularValorTotal();
 		return valorTotal;
 	}
 
@@ -56,7 +57,7 @@ public class Pedido implements CalculoValorTotal {
 	
 	@Override
 	public void calcularValorTotal() {
-		double soma = getValorTotal();
+		double soma = 0;
 		for(Item item : itens) {
 			soma += item.getPreco();
 		}
