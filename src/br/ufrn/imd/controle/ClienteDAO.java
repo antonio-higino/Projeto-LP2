@@ -23,4 +23,12 @@ public class ClienteDAO {
 		}
 		System.out.println("************************************");
 	}
+	
+	public boolean buscarCliente(String nome) {
+		
+		
+		
+		return false;
+	}
+	
 }
