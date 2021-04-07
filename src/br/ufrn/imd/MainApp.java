@@ -1,6 +1,6 @@
 package br.ufrn.imd;
 
-//import br.ufrn.imd.dao.Cardapio;
+//import br.ufrn.imd.dao.Banco;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,9 +23,9 @@ public class MainApp extends Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Banco banco = Banco.getInstance();
+		//banco.getCardapio().listarTudo();
 		launch(args);
-		//Cardapio cardapio = new Cardapio();
-		//cardapio.listarTudo();
 	}
 
 }

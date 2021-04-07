@@ -26,6 +26,22 @@ public class Banco {
 		return banco;
 	}
 
+	public ComandaDAO getBancoComandas() {
+		return bancoComandas;
+	}
+
+	public FuncionarioDAO getBancoFuncionarios() {
+		return bancoFuncionarios;
+	}
+
+	public Cardapio getCardapio() {
+		return cardapio;
+	}
+
+	public FilaDaCozinha getFilaDaCozinha() {
+		return filaDaCozinha;
+	}
+
 	public String getSenhaDoSistema() {
 		return senhaDoSistema;
 	}
