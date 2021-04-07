@@ -3,7 +3,7 @@ package br.ufrn.imd.modelo;
 public class Prato extends Item {
 	
 	private int quantidadeDePessoasServida;
-	private String ingredientes;
+	private String descricao;
 	private boolean contemGluten;
 	
 	public Prato() {
@@ -18,12 +18,12 @@ public class Prato extends Item {
 		this.quantidadeDePessoasServida = quantidadeDePessoasServida;
 	}
 
-	public String getIngredientes() {
-		return ingredientes;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setIngredientes(String ingredientes) {
-		this.ingredientes = ingredientes;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public boolean isContemGluten() {
@@ -38,9 +38,9 @@ public class Prato extends Item {
 		String output = "";
 		
 		if(isContemGluten()) {
-			output += " CONTÉM GLÚTEN";
+			output += "CONTÉM GLÚTEN";
 		}else {
-			output += " NÃO CONTÉM GLÚTEN";
+			output += "NÃO CONTÉM GLÚTEN";
 		}
 		
 		return output;

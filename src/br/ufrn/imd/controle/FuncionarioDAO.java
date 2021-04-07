@@ -24,4 +24,11 @@ public class FuncionarioDAO {
 		}
 		System.out.println("************************************");
 	}
+	
+	public boolean buscarFuncionario(String nome) {
+		
+		
+		
+		return false;
+	}
 }

@@ -38,15 +38,15 @@ public class Bebida extends Item {
 		String output = "";
 		
 		if(isDiet()) {
-			output += " É DIET";
+			output += "É DIET ";
 		}else {
-			output += " NÃO É DIET";
+			output += "NÃO É DIET ";
 		}
 		
 		if(isLight()) {
-			output += " É LIGHT";
+			output += "/ É LIGHT";
 		}else {
-			output += " NÃO É LIGHT";
+			output += "/ NÃO É LIGHT";
 		}
 		
 		return output;

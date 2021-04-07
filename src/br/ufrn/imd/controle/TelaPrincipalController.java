@@ -40,8 +40,20 @@ public class TelaPrincipalController {
     }
 
     @FXML
-    void abrirTelaIdentificacaoFuncionario(ActionEvent event) {
-
+    void abrirTelaIdentificacaoFuncionario(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(TelaIdentificacaoFuncionarioController.class.getResource("/br/ufrn/imd/visao/TelaIdentificacaoFuncionario.fxml"));
+    	AnchorPane page = (AnchorPane) loader.load();
+    	
+    	Stage funcionarioStage = new Stage();
+    	funcionarioStage.setTitle("Identificação dos funcionários");
+    	funcionarioStage.setResizable(false);
+    	Scene scene = new Scene(page);
+    	funcionarioStage.setScene(scene);
+    	
+    	TelaIdentificacaoFuncionarioController controller = loader.getController();
+    	controller.setFuncionarioStage(funcionarioStage);
+    	funcionarioStage.showAndWait();
     }
 
     @FXML

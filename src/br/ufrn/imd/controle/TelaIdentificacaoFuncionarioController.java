@@ -6,9 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-public class TelaIdentificacaoClienteController {
+public class TelaIdentificacaoFuncionarioController {
 	
-	private Stage clienteStage;
+	private Stage funcionarioStage;
 	
 	@FXML
     private MenuItem menuItemFecharJanela;
@@ -20,12 +20,12 @@ public class TelaIdentificacaoClienteController {
     private Button botaoCadastrar;
 
     @FXML
-    void abrirTelaCadastroCliente(ActionEvent event) {
+    void abrirTelaCadastroFuncionario(ActionEvent event) {
 
     }
 
     @FXML
-    void checarCliente(ActionEvent event) {
+    void checarFuncionario(ActionEvent event) {
 
     }
     
@@ -34,7 +34,7 @@ public class TelaIdentificacaoClienteController {
 
     }
 
-	public void setClienteStage(Stage clienteStage) {
-		this.clienteStage = clienteStage;
+	public void setFuncionarioStage(Stage funcionarioStage) {
+		this.funcionarioStage = funcionarioStage;
 	}
 }
