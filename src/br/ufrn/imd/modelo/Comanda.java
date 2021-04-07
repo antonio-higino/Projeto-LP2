@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Comanda implements CalculoValorTotal {
 	
 	private int id;
-	private String nomeDoCliente;
 	private ArrayList<Pedido> pedidos;
+	private String nomeDoCliente;
 	private double valorTotal = 0;
 	
 	public Comanda() {

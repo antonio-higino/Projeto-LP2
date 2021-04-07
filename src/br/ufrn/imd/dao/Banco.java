@@ -7,6 +7,8 @@ public class Banco {
 	private Cardapio cardapio;
 	private FilaDaCozinha filaDaCozinha;
 	
+	private String senhaDoSistema = "DuplaDinamica";
+	
 	private static Banco banco;
 	
 	private Banco() {
@@ -22,5 +24,9 @@ public class Banco {
 			banco = new Banco();
 		}
 		return banco;
+	}
+
+	public String getSenhaDoSistema() {
+		return senhaDoSistema;
 	}
 }

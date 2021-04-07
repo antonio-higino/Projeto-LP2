@@ -6,6 +6,7 @@ import br.ufrn.imd.modelo.Comanda;
 public class ComandaDAO {
 	
 	private ArrayList<Comanda> comandas;
+	private int contadorParaId = 0;
 	
 	public ComandaDAO() {
 		comandas = new ArrayList<Comanda>();
@@ -13,6 +14,11 @@ public class ComandaDAO {
 	
 	public void cadastrarComanda(Comanda comanda) {
 		comandas.add(comanda);
+	}
+	
+	public int getContadorParaId() {
+		contadorParaId++;
+		return contadorParaId;
 	}
 	
 	public boolean buscarComanda(int id) {

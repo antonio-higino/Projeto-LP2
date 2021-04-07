@@ -23,7 +23,7 @@ public class TelaCadastroFuncionarioController {
     
     @FXML
     void fecharJanela(ActionEvent event) {
-
+    	cadastroStage.close();
     }
     
     public void setCadastroFuncionarioStage(Stage cadastroStage) {

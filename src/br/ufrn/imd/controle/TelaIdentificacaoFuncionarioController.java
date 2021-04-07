@@ -47,7 +47,7 @@ public class TelaIdentificacaoFuncionarioController {
     
     @FXML
     void fecharJanela(ActionEvent event) {
-
+    	funcionarioStage.close();
     }
 
 	public void setFuncionarioStage(Stage funcionarioStage) {
