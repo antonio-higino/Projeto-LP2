@@ -1,6 +1,6 @@
 package br.ufrn.imd;
 
-//import br.ufrn.imd.controle.Cardapio;
+//import br.ufrn.imd.dao.Cardapio;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -1,4 +1,4 @@
-package br.ufrn.imd.controle;
+package br.ufrn.imd.dao;
 
 import java.util.Queue;
 import java.util.LinkedList;

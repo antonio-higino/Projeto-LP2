@@ -6,7 +6,7 @@ public class Pedido implements CalculoValorTotal {
 	
 	private int id;
 	private ArrayList<Item> itens;
-	private Cliente cliente;
+	private String nomeDoCliente;
 	private double valorTotal = 0;
 	
 	public Pedido() {
@@ -25,12 +25,12 @@ public class Pedido implements CalculoValorTotal {
 		return itens;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	public String getNomeDoCliente() {
+		return nomeDoCliente;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setNomeDoCliente(String nomeDoCliente) {
+		this.nomeDoCliente = nomeDoCliente;
 	}
 
 	public double getValorTotal() {

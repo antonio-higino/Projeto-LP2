@@ -4,11 +4,29 @@ import java.util.ArrayList;
 
 public class Comanda implements CalculoValorTotal {
 	
+	private int id;
+	private String nomeDoCliente;
 	private ArrayList<Pedido> pedidos;
 	private double valorTotal = 0;
 	
 	public Comanda() {
 		pedidos = new ArrayList<Pedido>();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNomeDoCliente() {
+		return nomeDoCliente;
+	}
+
+	public void setNomeDoCliente(String nomeDoCliente) {
+		this.nomeDoCliente = nomeDoCliente;
 	}
 
 	public ArrayList<Pedido> getPedidos() {

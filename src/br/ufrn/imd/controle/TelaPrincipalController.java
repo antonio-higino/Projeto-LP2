@@ -57,6 +57,6 @@ public class TelaPrincipalController {
 
     @FXML
     void fecharAplicacao(ActionEvent event) {
-
+    	System.exit(0);
     }
 }

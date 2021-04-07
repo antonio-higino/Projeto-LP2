@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-public class TelaCadastroClienteController {
+public class TelaCadastroFuncionarioController {
 	
 	private Stage cadastroStage;
 	
@@ -14,10 +14,10 @@ public class TelaCadastroClienteController {
     private MenuItem menuItemFecharJanela;
 
 	@FXML
-    private Button botaoCadastrarCliente;
+    private Button botaoCadastrarFuncionario;
 
     @FXML
-    void abrirTelaComandaCliente(ActionEvent event) {
+    void abrirTelaMenuFuncionario(ActionEvent event) {
 
     }
     
@@ -26,7 +26,7 @@ public class TelaCadastroClienteController {
 
     }
     
-    public void setCadastroClientStage(Stage cadastroStage) {
+    public void setCadastroFuncionarioStage(Stage cadastroStage) {
     	this.cadastroStage = cadastroStage;
     }
 }
