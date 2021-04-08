@@ -33,4 +33,17 @@ public class Funcionario extends Pessoa {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+	
+	public void atribuiEspecificacoes() {
+		if(getFuncao() == "Garçom") {
+			setSalario(400.89);
+			setCargaHoraria(8);
+		}else if(getFuncao() == "Caixa") {
+			setSalario(350);
+			setCargaHoraria(12);
+		}else if(getFuncao() == "Cozinheiro") {
+			setSalario(550);
+			setCargaHoraria(12);
+		}
+	}
 }
