@@ -14,6 +14,7 @@ public class ComandaDAO {
 	
 	public void cadastrarComanda(Comanda comanda) {
 		comandas.add(comanda);
+		System.out.println("Comanda cadastrada com sucesso");
 	}
 	
 	public int getContadorParaId() {
@@ -22,10 +23,13 @@ public class ComandaDAO {
 	}
 	
 	public boolean buscarComanda(int id) {
-		
-		
-		
+		for(Comanda comanda : comandas) {
+			if(comanda.getId() == id) {
+				System.out.println("Comanda encontrada");
+				return true;
+			}
+		}
+		System.out.println("Comanda não encontrada");
 		return false;
 	}
-
 }

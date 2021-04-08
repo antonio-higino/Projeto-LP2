@@ -1,12 +1,16 @@
 package br.ufrn.imd.controle;
 
 import java.io.IOException;
+
+import br.ufrn.imd.dao.Banco;
+import br.ufrn.imd.modelo.Comanda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -15,42 +19,59 @@ public class TelaIdentificacaoClienteController {
 	private Stage clienteStage;
 	
 	@FXML
-    private MenuItem menuItemFecharJanela;
-	
-	@FXML
     private Button botaoEntrar;
+
+    @FXML
+    private TextField textFieldNomeDoCliente;
 
     @FXML
     private Button botaoCadastrar;
 
     @FXML
-    void abrirTelaCadastroCliente(ActionEvent event) throws IOException{
-    	FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(TelaCadastroClienteController.class.getResource("/br/ufrn/imd/visao/TelaCadastroCliente.fxml"));
-    	AnchorPane page = (AnchorPane) loader.load();
-    	
-    	Stage cadastroClienteStage = new Stage();
-    	cadastroClienteStage.setTitle("Cadastro do Cliente");
-    	cadastroClienteStage.setResizable(false);
-    	Scene scene = new Scene(page);
-    	cadastroClienteStage.setScene(scene);
-    	
-    	TelaCadastroClienteController controller = loader.getController();
-    	controller.setCadastroClientStage(cadastroClienteStage);
-    	cadastroClienteStage.showAndWait();
-    }
+    private MenuItem menuItemFecharJanela;
 
     @FXML
-    void checarCliente(ActionEvent event) {
+    private TextField textFieldNumeroDaComanda;
 
+    @FXML
+    void checarExistenciaComanda(ActionEvent event) {
+    	Banco banco = Banco.getInstance();
+    	
+    	String input = textFieldNumeroDaComanda.getText();
+    	int id = Integer.parseInt(input);
+    	
+    	if(banco.getBancoComandas().buscarComanda(id)) {
+    		abrirTelaMenuCliente();
+    	}
     }
-    
+
     @FXML
     void fecharJanela(ActionEvent event) {
     	clienteStage.close();
     }
 
+    @FXML
+    void gerarNovaComanda(ActionEvent event) {
+    	Banco banco = Banco.getInstance();
+    	
+    	int id = banco.getBancoComandas().getContadorParaId();
+    	
+    	Comanda comanda = new Comanda();
+    	
+    	comanda.setId(id);
+    	
+    	comanda.setNomeDoCliente(textFieldNomeDoCliente.getText());
+    	
+    	banco.getBancoComandas().cadastrarComanda(comanda);
+    	
+    	abrirTelaMenuCliente();
+    }
+
 	public void setClienteStage(Stage clienteStage) {
 		this.clienteStage = clienteStage;
+	}
+	
+	void abrirTelaMenuCliente() {
+		
 	}
 }
