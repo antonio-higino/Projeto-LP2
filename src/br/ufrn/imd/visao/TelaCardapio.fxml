@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.imd.controle.TelaCardapioController">
    <children>
@@ -20,7 +21,19 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextArea fx:id="textAreaPratos" editable="false" layoutX="40.0" layoutY="26.0" prefHeight="275.0" prefWidth="370.0" />
+                        <TextArea fx:id="textAreaPratos" editable="false" prefHeight="302.0" prefWidth="380.0" />
+                        <CheckBox fx:id="checkBoxFrango" layoutX="400.0" layoutY="80.0" mnemonicParsing="false" text="Frango Grelhado" />
+                        <CheckBox fx:id="checkBoxCarne" layoutX="400.0" layoutY="140.0" mnemonicParsing="false" text="Filé Mignon" />
+                        <CheckBox fx:id="checkBoxPeixe" layoutX="400.0" layoutY="200.0" mnemonicParsing="false" text="Salmão" />
+                        <CheckBox fx:id="checkBoxHamburger" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" text="Hambúrger" />
+                        <TextField fx:id="textFieldQntFrango" layoutX="535.0" layoutY="75.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="textFieldQntCarne" layoutX="535.0" layoutY="135.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="textFieldQntPeixe" layoutX="535.0" layoutY="195.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="textFieldQntHamburger" layoutX="535.0" layoutY="255.0" prefHeight="25.0" prefWidth="30.0" />
+                        <Text layoutX="421.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marque os desejados e" />
+                        <Text layoutX="539.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qnt." />
+                        <Text layoutX="421.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="preencha a quantidade" />
+                        <Text layoutX="450.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de cada um" />
                      </children>
                   </AnchorPane>
             </content>
@@ -29,7 +42,19 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextArea fx:id="textAreaBebidas" editable="false" layoutX="40.0" layoutY="26.0" prefHeight="275.0" prefWidth="370.0" />
+                        <TextArea fx:id="textAreaBebidas" editable="false" prefHeight="302.0" prefWidth="380.0" />
+                        <Text layoutX="421.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marque os desejados e" />
+                        <Text layoutX="421.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="preencha a quantidade" />
+                        <Text layoutX="450.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="de cada um" />
+                        <Text layoutX="539.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qnt." />
+                        <CheckBox fx:id="checkBoxAgua" layoutX="400.0" layoutY="80.0" mnemonicParsing="false" text="Água Mineral" />
+                        <CheckBox fx:id="checkBoxSuco" layoutX="400.0" layoutY="140.0" mnemonicParsing="false" text="Suco de Laranja" />
+                        <CheckBox fx:id="checkBoxCoca" layoutX="400.0" layoutY="200.0" mnemonicParsing="false" text="Coca-Cola" />
+                        <CheckBox fx:id="checkBoxGuarana" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" text="Guaraná Diet" />
+                        <TextField fx:id="textFieldQntAgua" layoutX="535.0" layoutY="75.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="textFieldQntSuco" layoutX="535.0" layoutY="135.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="textFieldQntCoca" layoutX="535.0" layoutY="195.0" prefHeight="25.0" prefWidth="30.0" />
+                        <TextField fx:id="textFieldQntGuarana" layoutX="535.0" layoutY="255.0" prefHeight="25.0" prefWidth="30.0" />
                      </children>
                   </AnchorPane>
             </content>
@@ -45,8 +70,9 @@
             </Menu>
          </menus>
       </MenuBar>
-      <Button fx:id="botaoFinalizarPedido" layoutX="266.0" layoutY="363.0" mnemonicParsing="false" onAction="#finalizarPedido" prefHeight="32.0" prefWidth="100.0" text="Finalizar Pedido" />
-      <TextField fx:id="textFieldIdDaComanda" layoutX="197.0" layoutY="366.0" prefHeight="25.0" prefWidth="52.0" />
-      <Label layoutX="77.0" layoutY="370.0" text="Número da comanda" />
+      <Button fx:id="botaoFinalizarPedido" layoutX="434.0" layoutY="363.0" mnemonicParsing="false" onAction="#finalizarPedido" prefHeight="32.0" prefWidth="100.0" text="Finalizar Pedido" />
+      <TextField fx:id="textFieldIdDaComanda" layoutX="329.0" layoutY="366.0" prefHeight="25.0" prefWidth="52.0" />
+      <Label layoutX="210.0" layoutY="371.0" text="Número da comanda" />
+      <TextField fx:id="textFieldAvisoCardapio" editable="false" layoutX="14.0" layoutY="366.0" />
    </children>
 </AnchorPane>
