@@ -14,6 +14,15 @@ public class Cardapio {
 		preencherCardapio();
 	}
 	
+	public Item getItemEspecifico(int id) {
+		for(Item item : menu) {
+			if(item.getId() == id) {
+				return item;
+			}
+		}
+		return null;
+	}
+	
 	public String listarBebidas() {
 		String output = "";
 		

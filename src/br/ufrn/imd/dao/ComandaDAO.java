@@ -22,6 +22,15 @@ public class ComandaDAO {
 		return contadorParaId;
 	}
 	
+	public Comanda getComandaEspecifica(int id) {
+		for(Comanda comanda : comandas) {
+			if(comanda.getId() == id) {
+				return comanda;
+			}
+		}
+		return null;
+	}
+	
 	public boolean buscarComanda(int id) {
 		for(Comanda comanda : comandas) {
 			if(comanda.getId() == id) {

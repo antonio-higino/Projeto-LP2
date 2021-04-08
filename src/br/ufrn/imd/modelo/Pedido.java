@@ -2,6 +2,8 @@ package br.ufrn.imd.modelo;
 
 import java.util.ArrayList;
 
+import br.ufrn.imd.dao.Cardapio;
+
 public class Pedido implements CalculoValorTotal {
 	
 	private int id;
@@ -42,8 +44,9 @@ public class Pedido implements CalculoValorTotal {
 		this.valorTotal = valorTotal;
 	}
 
-	public void adicionarItem(Item item) {
-		itens.add(item);
+	public void adicionarItem(int id) {
+		Cardapio cardapio = new Cardapio();
+		itens.add(cardapio.getItemEspecifico(id));
 	}
 	
 	public void listarItens() {

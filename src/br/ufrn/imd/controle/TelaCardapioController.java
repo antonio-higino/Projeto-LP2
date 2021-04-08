@@ -1,6 +1,8 @@
 package br.ufrn.imd.controle;
 
+import br.ufrn.imd.dao.Banco;
 import br.ufrn.imd.dao.Cardapio;
+import br.ufrn.imd.modelo.Pedido;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -87,7 +89,26 @@ public class TelaCardapioController {
 
     @FXML
     void finalizarPedido(ActionEvent event) {
-
+    	try {
+    		Banco banco = Banco.getInstance();
+    		
+    		String input = textFieldIdDaComanda.getText();
+    		
+    		int idDaComanda = Integer.parseInt(input);
+    		
+    		if(banco.getBancoComandas().buscarComanda(idDaComanda)) {
+        		Pedido pedido = new Pedido();
+        		
+        		int idDoPedido = banco.getFilaDaCozinha().getContadorParaId();
+        		
+        		String nome = banco.getBancoComandas().getComandaEspecifica(idDaComanda).getNomeDoCliente();
+        	}else {
+        		textFieldAvisoCardapio.setText("Comanda não encontrada");
+        	}
+    		
+    	} catch(NumberFormatException ex){
+    		textFieldAvisoCardapio.setText("Número de comanda inválido");
+    	}
     }
     
     public void preencherTextAreas() {
