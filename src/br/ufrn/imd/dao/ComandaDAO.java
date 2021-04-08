@@ -25,11 +25,11 @@ public class ComandaDAO {
 	public boolean buscarComanda(int id) {
 		for(Comanda comanda : comandas) {
 			if(comanda.getId() == id) {
-				System.out.println("Comanda encontrada");
+				//System.out.println("Comanda encontrada");
 				return true;
 			}
 		}
-		System.out.println("Comanda não encontrada");
+		//System.out.println("Comanda não encontrada");
 		return false;
 	}
 }

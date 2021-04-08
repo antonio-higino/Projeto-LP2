@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 public class TelaIdentificacaoClienteController {
 	
 	private Stage clienteStage;
+	private boolean novaComandaGerada = false;
 	
 	@FXML
     private Button botaoEntrar;
@@ -25,23 +26,47 @@ public class TelaIdentificacaoClienteController {
     private TextField textFieldNomeDoCliente;
 
     @FXML
-    private Button botaoCadastrar;
+    private Button botaoGerarComanda;
 
     @FXML
     private MenuItem menuItemFecharJanela;
 
     @FXML
     private TextField textFieldNumeroDaComanda;
+    
+    @FXML
+    private TextField textFieldResultadoDaBusca;
+    
+    @FXML
+    private TextField textFieldIdDaComandaGerada;
+    
+    @FXML
+    private Button botaoEntrarNovaComanda;
 
     @FXML
-    void checarExistenciaComanda(ActionEvent event) {
-    	Banco banco = Banco.getInstance();
-    	
-    	String input = textFieldNumeroDaComanda.getText();
-    	int id = Integer.parseInt(input);
-    	
-    	if(banco.getBancoComandas().buscarComanda(id)) {
+    void chamarAbrirMenuCliente(ActionEvent event) throws IOException {
+    	if(novaComandaGerada) {
     		abrirTelaMenuCliente();
+    	}
+    }
+
+    @FXML
+    void checarExistenciaComanda(ActionEvent event) throws IOException {
+    	try {
+    		Banco banco = Banco.getInstance();
+    		
+    		String input = textFieldNumeroDaComanda.getText();
+    		
+    		int id = Integer.parseInt(input);
+    		
+    		if(banco.getBancoComandas().buscarComanda(id)) {
+        		abrirTelaMenuCliente();
+        	}else {
+        		textFieldResultadoDaBusca.setText("Comanda não encontrada");
+        	}
+    		
+    	} catch(NumberFormatException ex){
+    		textFieldResultadoDaBusca.setText("Número de comanda inválido");
     	}
     }
 
@@ -52,26 +77,48 @@ public class TelaIdentificacaoClienteController {
 
     @FXML
     void gerarNovaComanda(ActionEvent event) {
-    	Banco banco = Banco.getInstance();
+    	String input = textFieldNomeDoCliente.getText();
     	
-    	int id = banco.getBancoComandas().getContadorParaId();
-    	
-    	Comanda comanda = new Comanda();
-    	
-    	comanda.setId(id);
-    	
-    	comanda.setNomeDoCliente(textFieldNomeDoCliente.getText());
-    	
-    	banco.getBancoComandas().cadastrarComanda(comanda);
-    	
-    	abrirTelaMenuCliente();
+    	if(!input.equals("")) {
+			Banco banco = Banco.getInstance();
+			
+			int id = banco.getBancoComandas().getContadorParaId();
+			
+			Comanda comanda = new Comanda();
+			
+			comanda.setId(id);
+			
+			comanda.setNomeDoCliente(input);
+			
+			banco.getBancoComandas().cadastrarComanda(comanda);
+			
+			textFieldIdDaComandaGerada.setText("O número da sua comanda é " + id);
+			
+			novaComandaGerada = true;
+    	}else {
+    		textFieldIdDaComandaGerada.setText("Por favor preencha seu nome");
+    	}
     }
 
 	public void setClienteStage(Stage clienteStage) {
 		this.clienteStage = clienteStage;
 	}
 	
-	void abrirTelaMenuCliente() {
+	void abrirTelaMenuCliente() throws IOException {
+		System.out.println("Abrindo");
 		
+		FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(TelaMenuClienteController.class.getResource("/br/ufrn/imd/visao/TelaMenuCliente.fxml"));
+    	AnchorPane page = (AnchorPane) loader.load();
+    	
+    	Stage menuClienteStage = new Stage();
+    	menuClienteStage.setTitle("Menu dos clientes");
+    	menuClienteStage.setResizable(false);
+    	Scene scene = new Scene(page);
+    	menuClienteStage.setScene(scene);
+    	
+    	TelaMenuClienteController controller = loader.getController();
+    	controller.setMenuClienteStage(menuClienteStage);
+    	menuClienteStage.showAndWait();
 	}
 }
