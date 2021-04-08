@@ -1,9 +1,14 @@
 package br.ufrn.imd.controle;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class TelaMenuClienteController {
@@ -11,7 +16,7 @@ public class TelaMenuClienteController {
 	private Stage menuClienteStage;
 	
 	@FXML
-    private MenuItem menuItemSair;
+    private MenuItem menuItemFecharJanela;
 
     @FXML
     private Button botaoFazerPedido;
@@ -20,8 +25,21 @@ public class TelaMenuClienteController {
     private Button botaoPagar;
 
     @FXML
-    void abrirTelaCardapio(ActionEvent event) {
-
+    void abrirTelaCardapio(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(TelaCardapioController.class.getResource("/br/ufrn/imd/visao/TelaCardapio.fxml"));
+    	AnchorPane page = (AnchorPane) loader.load();
+    	
+    	Stage cardapioStage = new Stage();
+    	cardapioStage.setTitle("Cardápio");
+    	cardapioStage.setResizable(false);
+    	Scene scene = new Scene(page);
+    	cardapioStage.setScene(scene);
+    	
+    	TelaCardapioController controller = loader.getController();
+    	controller.setCardapioStage(cardapioStage);
+    	controller.preencherTextAreas();
+    	cardapioStage.showAndWait();
     }
 
     @FXML

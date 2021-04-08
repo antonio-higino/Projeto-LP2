@@ -105,7 +105,7 @@ public class TelaIdentificacaoClienteController {
 	}
 	
 	void abrirTelaMenuCliente() throws IOException {
-		System.out.println("Abrindo");
+		//System.out.println("Abrindo");
 		
 		FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(TelaMenuClienteController.class.getResource("/br/ufrn/imd/visao/TelaMenuCliente.fxml"));

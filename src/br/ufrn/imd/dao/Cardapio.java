@@ -18,39 +18,39 @@ public class Cardapio {
 		menu.add(item);
 	}*/
 	
-	public void listarBebidas() {
-		System.out.println("--Bebidas--");
+	public String listarBebidas() {
+		String output = "";
+		
+		output += "--Bebidas-- \n";
+		
 		for (Item item : menu) {
 			if(item instanceof Bebida) {
-				//System.out.println("************************************");
-				System.out.println();
-				System.out.println(item.getNome() + " (" + ((Bebida)item).getQuantidadeDeMl() + "ml)");
-				System.out.println("Preço: R$ " + item.getPreco());
-				System.out.println(((Bebida)item).booleanToString());
+				output += "\n";
+				output += item.getNome() + " (" + ((Bebida)item).getQuantidadeDeMl() + "ml)" + "\n";
+				output += "Preço: R$ " + item.getPreco() + "\n";
+				output += ((Bebida)item).booleanToString();
 			}
 		}
 		//System.out.println("************************************");
-		System.out.println();
+		//output += "\n";
+		return output;
 	}
 
-	public void listarPratos() {
-		System.out.println("--Pratos--");
+	public String listarPratos() {
+		String output = "";
+		
+		output += "--Pratos-- \n";
+		
 		for (Item item : menu) {
 			if(item instanceof Prato) {
-				//System.out.println("************************************");
-				System.out.println();
-				System.out.println(item.getNome() + " - " + ((Prato)item).getDescricao());
-				System.out.println("Preço: R$ " + item.getPreco() + " - Serve " + ((Prato)item).getQuantidadeDePessoasServida() + " pessoa(s)");
-				System.out.println(((Prato)item).booleanToString());
+				output += "\n";
+				output += item.getNome() + " - " + ((Prato)item).getDescricao() + "\n";
+				output += "Preço: R$ " + item.getPreco() + " - Serve " + ((Prato)item).getQuantidadeDePessoasServida() + " pessoa(s)" + "\n";
+				output += ((Prato)item).booleanToString();
 			}
 		}
 		//System.out.println("************************************");
-		System.out.println();
-	}
-	
-	public void listarTudo() {
-		listarPratos();
-		listarBebidas();
+		return output;
 	}
 	
 	public void preencherCardapio() {
