@@ -47,13 +47,14 @@ public class Comanda implements CalculoValorTotal {
 	}
 	
 	public void listarPedidos() {
-		System.out.println("Pedidos desta comanda: ");
+		System.out.println("Pedidos desta comanda (" + getId() + "): ");
 		for(Pedido pedido : pedidos) {
-			System.out.println("************************************");
+			System.out.println();
 			System.out.println("Pedido numero: " + pedido.getId());
 			pedido.listarItens();
 		}
-		System.out.println("************************************");
+		System.out.println("Valor Total da comanda: " + getValorTotal());
+		System.out.println();
 	}
 	
 	@Override

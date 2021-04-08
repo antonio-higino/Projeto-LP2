@@ -91,23 +91,88 @@ public class TelaCardapioController {
     void finalizarPedido(ActionEvent event) {
     	try {
     		Banco banco = Banco.getInstance();
-    		
-    		String input = textFieldIdDaComanda.getText();
-    		
-    		int idDaComanda = Integer.parseInt(input);
+    		//String input = textFieldIdDaComanda.getText();
+    		int idDaComanda = Integer.parseInt(textFieldIdDaComanda.getText());
     		
     		if(banco.getBancoComandas().buscarComanda(idDaComanda)) {
-        		Pedido pedido = new Pedido();
-        		
-        		int idDoPedido = banco.getFilaDaCozinha().getContadorParaId();
-        		
-        		String nome = banco.getBancoComandas().getComandaEspecifica(idDaComanda).getNomeDoCliente();
+    			
+    			if(!checarPedidoVazio()) {
+	        		Pedido pedido = new Pedido();
+	        		int idDoPedido = banco.getFilaDaCozinha().getContadorParaId();
+	        		String nome = banco.getBancoComandas().getComandaEspecifica(idDaComanda).getNomeDoCliente();
+	        		
+	        		pedido.setId(idDoPedido);
+	        		pedido.setNomeDoCliente(nome);
+	        		
+	        		if(checkBoxFrango.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntFrango.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(1);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxCarne.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntCarne.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(2);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxPeixe.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntPeixe.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(3);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxHamburger.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntHamburger.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(4);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxAgua.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntAgua.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(5);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxSuco.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntSuco.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(6);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxCoca.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntCoca.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(7);
+	        			}
+	        		}
+	        		
+	        		if(checkBoxGuarana.isSelected()) {
+	        			int quantidade = Integer.parseInt(textFieldQntGuarana.getText());
+	        			for(int i = 0; i < quantidade; i++) {
+	        				pedido.adicionarItem(8);
+	        			}
+	        		}
+	        		
+	        		banco.getBancoComandas().getComandaEspecifica(idDaComanda).adicionarPedido(pedido);
+	        		banco.getBancoComandas().getComandaEspecifica(idDaComanda).listarPedidos();
+	        		cardapioStage.close();
+	        		
+    			}else {
+    				textFieldAvisoCardapio.setText("Pedido vazio (inválido)");
+    			}
         	}else {
         		textFieldAvisoCardapio.setText("Comanda não encontrada");
         	}
     		
     	} catch(NumberFormatException ex){
-    		textFieldAvisoCardapio.setText("Número de comanda inválido");
+    		textFieldAvisoCardapio.setText("Número inválido");
     	}
     }
     
@@ -116,6 +181,52 @@ public class TelaCardapioController {
     	
     	textAreaPratos.setText(cardapio.listarPratos());
     	textAreaBebidas.setText(cardapio.listarBebidas());
+    }
+    
+    public boolean checarPedidoVazio() {
+    	if(checkBoxFrango.isSelected()) {
+    		if(Integer.parseInt(textFieldQntFrango.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxCarne.isSelected()){
+    		if(Integer.parseInt(textFieldQntCarne.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxPeixe.isSelected()){
+    		if(Integer.parseInt(textFieldQntPeixe.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxHamburger.isSelected()){
+    		if(Integer.parseInt(textFieldQntHamburger.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxAgua.isSelected()){
+    		if(Integer.parseInt(textFieldQntAgua.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxSuco.isSelected()){
+    		if(Integer.parseInt(textFieldQntSuco.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxCoca.isSelected()){
+    		if(Integer.parseInt(textFieldQntCoca.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else if(checkBoxGuarana.isSelected()){
+    		if(Integer.parseInt(textFieldQntGuarana.getText()) > 0) {
+    			return false;
+    		}
+    		return true;
+    	}else {
+    		return true;
+    	}
     }
 
 	public void setCardapioStage(Stage cardapioStage) {

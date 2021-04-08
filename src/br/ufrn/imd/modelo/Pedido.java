@@ -52,10 +52,10 @@ public class Pedido implements CalculoValorTotal {
 	public void listarItens() {
 		System.out.println("Itens deste pedido: ");
 		for(Item item : itens) {
-			System.out.println("************************************");
+			System.out.println();
 			System.out.println(item.getNome());
 		}
-		System.out.println("************************************");
+		System.out.println();
 	}
 	
 	@Override
