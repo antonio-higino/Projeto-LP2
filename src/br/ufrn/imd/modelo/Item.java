@@ -6,10 +6,6 @@ public abstract class Item {
 	private String nome;
 	private double preco;
 	
-	/*public Item() {
-		
-	}*/
-	
 	public int getId() {
 		return id;
 	}

@@ -21,14 +21,19 @@ public class FuncionarioDAO {
 		return contadorParaId;
 	}
 	
-	public void listarFuncionarios() {
-		System.out.println("--Funcionários--");
+	public String listarFuncionarios() {
+		String output = "";
+		
+		output += "--Funcionários--" + "\n";
+		
 		for(Funcionario funcionario : funcionarios) {
-			System.out.println("************************************");
-			System.out.println("Nome: " + funcionario.getNome() + " - " + funcionario.getFuncao());
-			System.out.println("Carga horária: " + funcionario.getCargaHoraria() + " horas - Salário: R$ " + funcionario.getSalario());
+			output += "\n";
+			output += "Nome: " + funcionario.getNome() + " - " + funcionario.getFuncao() + "\n";
+			output += "Carga horária: " + funcionario.getCargaHoraria() + " horas - Salário: R$ " + funcionario.getSalario() + "\n";
 		}
-		System.out.println("************************************");
+		output += "\n";
+		
+		return output;
 	}
 	
 	public boolean buscarFuncionario(String nome) {

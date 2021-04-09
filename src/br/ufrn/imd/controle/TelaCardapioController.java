@@ -228,6 +228,10 @@ public class TelaCardapioController {
     		return true;
     	}
     }
+    
+    private void abrirTelaMostrarPedidoRealizado(Pedido pedido) {
+    	
+    }
 
 	public void setCardapioStage(Stage cardapioStage) {
 		this.cardapioStage = cardapioStage;

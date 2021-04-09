@@ -43,13 +43,13 @@ public class TelaCadastroFuncionarioController {
 			
 			int id = banco.getBancoFuncionarios().getContadorParaId();
 			
-			Funcionario employer = new Funcionario();
+			Funcionario employee = new Funcionario();
 			
-			employer.setId(id);
+			employee.setId(id);
 			
-			employer.setNome(input);
+			employee.setNome(input);
 			
-			banco.getBancoFuncionarios().cadastrarFuncionario(employer);
+			banco.getBancoFuncionarios().cadastrarFuncionario(employee);
 			
 			textFieldResultadoCadastro.setText("Funcionario Nº: " + id + " cadastrado com sucesso!");
 			
