@@ -1,7 +1,5 @@
 package br.ufrn.imd.dao;
 
-import br.ufrn.imd.modelo.Comanda;
-
 public class Banco {
 	
 	private ComandaDAO bancoComandas;

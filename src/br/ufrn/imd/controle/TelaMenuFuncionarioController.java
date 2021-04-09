@@ -1,7 +1,6 @@
 package br.ufrn.imd.controle;
 
 import br.ufrn.imd.dao.Banco;
-import br.ufrn.imd.modelo.Pedido;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

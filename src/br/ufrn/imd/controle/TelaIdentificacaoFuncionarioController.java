@@ -3,9 +3,7 @@ package br.ufrn.imd.controle;
 import java.io.IOException;
 
 import br.ufrn.imd.dao.Banco;
-import br.ufrn.imd.modelo.Comanda;
 import br.ufrn.imd.modelo.Funcionario;
-import br.ufrn.imd.modelo.Pedido;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -103,6 +101,7 @@ public class TelaIdentificacaoFuncionarioController {
     	controller.setMenuFuncionarioStage(menuFuncionarioStage);
     	controller.preencherPedidos();
     	menuFuncionarioStage.showAndWait();
+    	funcionarioStage.close();
     }
 
 	public void setFuncionarioStage(Stage funcionarioStage) {

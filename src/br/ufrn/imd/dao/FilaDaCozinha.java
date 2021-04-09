@@ -1,10 +1,7 @@
 package br.ufrn.imd.dao;
 
 import java.util.ArrayList;
-
-import br.ufrn.imd.modelo.Item;
 import br.ufrn.imd.modelo.Pedido;
-import br.ufrn.imd.modelo.Prato;
 
 public class FilaDaCozinha {
 	
