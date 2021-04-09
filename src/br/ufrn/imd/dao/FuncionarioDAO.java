@@ -37,9 +37,11 @@ public class FuncionarioDAO {
 	}
 	
 	public boolean buscarFuncionario(String nome) {
-		
-		
-		
+		for(Funcionario employer : funcionarios) {
+			if(employer.getNome().equals(nome)) {
+				return true;
+			}
+		}
 		return false;
 	}
 }

@@ -8,7 +8,7 @@ public class Banco {
 	private FilaDaCozinha filaDaCozinha;
 	
 	private double saldoDoCaixa = 0;
-	private String senhaDoSistema = "DuplaDinamica";
+	private String senhaDoSistema = "dupladinamica";
 	
 	private static Banco banco;
 	

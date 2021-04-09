@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class TelaMenuFuncionarioController {
+	
 	private Stage menuFuncionarioStage;
 	
 	@FXML
@@ -36,8 +37,12 @@ public class TelaMenuFuncionarioController {
     }
     
     public void preencherPedidos() {
-    	Pedido pedido = new Pedido();
+    	Banco banco = Banco.getInstance();
   
-    	textAreaPedidos.setText(pedido.listarItens());
+    	//textAreaPedidos.setText(banco.getFilaDaCozinha().listarPedidos());
+    }
+    
+    public void setMenuFuncionarioStage(Stage menuFuncionarioStage) {
+    	this.menuFuncionarioStage = menuFuncionarioStage;
     }
 }
