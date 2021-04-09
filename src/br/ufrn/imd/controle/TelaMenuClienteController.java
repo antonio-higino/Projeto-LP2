@@ -43,8 +43,21 @@ public class TelaMenuClienteController {
     }
 
     @FXML
-    void abrirTelaPagamento(ActionEvent event) {
-
+    void abrirTelaPagamento(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(TelaPagamentoController.class.getResource("/br/ufrn/imd/visao/TelaPagamento.fxml"));
+    	AnchorPane page = (AnchorPane) loader.load();
+    	
+    	Stage pagamentoStage = new Stage();
+    	pagamentoStage.setTitle("Pagamento");
+    	pagamentoStage.setResizable(false);
+    	Scene scene = new Scene(page);
+    	pagamentoStage.setScene(scene);
+    	
+    	TelaPagamentoController controller = loader.getController();
+    	controller.setPagamentoStage(pagamentoStage);
+    	pagamentoStage.showAndWait();
+    	menuClienteStage.close();
     }
 
     @FXML
