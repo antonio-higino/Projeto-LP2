@@ -10,6 +10,7 @@ public class Pedido implements CalculoValorTotal {
 	private ArrayList<Item> itens;
 	private String nomeDoCliente;
 	private double valorTotal = 0;
+	private boolean foiDespachado = false;
 	
 	public Pedido() {
 		itens = new ArrayList<Item>();
@@ -49,13 +50,18 @@ public class Pedido implements CalculoValorTotal {
 		itens.add(cardapio.getItemEspecifico(id));
 	}
 	
-	public void listarItens() {
-		System.out.println("Itens deste pedido: ");
+	public String listarItens() {
+		String output = "";
+		
 		for(Item item : itens) {
-			System.out.println();
+			System.out.println("Pedido numero " + id + ":");
+			System.out.println("Cliente: " + getNomeDoCliente());
 			System.out.println(item.getNome());
+			
 		}
 		System.out.println();
+		
+		return output;
 	}
 	
 	@Override
