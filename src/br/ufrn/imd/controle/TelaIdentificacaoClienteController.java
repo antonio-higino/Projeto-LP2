@@ -105,5 +105,6 @@ public class TelaIdentificacaoClienteController {
     	TelaMenuClienteController controller = loader.getController();
     	controller.setMenuClienteStage(menuClienteStage);
     	menuClienteStage.showAndWait();
+    	clienteStage.close();
 	}
 }

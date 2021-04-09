@@ -166,6 +166,7 @@ public class TelaCardapioController {
 	        		}
 	        		
 	        		banco.getBancoComandas().getComandaEspecifica(idDaComanda).adicionarPedido(pedido);
+	        		
 	        		abrirTelaMostrarPedidoRealizado(pedido);
 	        		cardapioStage.close();
 	        		
@@ -188,7 +189,7 @@ public class TelaCardapioController {
     	textAreaBebidas.setText(cardapio.listarBebidas());
     }
     
-    public boolean checarPedidoVazio() {
+    private boolean checarPedidoVazio() {
     	if(checkBoxFrango.isSelected()) {
     		if(Integer.parseInt(textFieldQntFrango.getText()) > 0) {
     			return false;
