@@ -1,20 +1,33 @@
 package br.ufrn.imd.dao;
 
-import java.util.Queue;
-import java.util.LinkedList;
+import java.util.ArrayList;
+
+import br.ufrn.imd.modelo.Item;
 import br.ufrn.imd.modelo.Pedido;
+import br.ufrn.imd.modelo.Prato;
 
 public class FilaDaCozinha {
 	
-	private Queue<Pedido> fila;
+	private ArrayList<Pedido> fila;
 	private int contadorParaId = 0;
 	
 	public FilaDaCozinha() {
-		fila = new LinkedList<Pedido>();
+		fila = new ArrayList<Pedido>();
 	}
 	
 	public int getContadorParaId() {
 		contadorParaId++;
 		return contadorParaId;
+	}
+	
+	public String listarPedidos() {
+		String output = "";
+		output += "--Historico da Cozinha--";
+		output += "\n";
+		for (Pedido pedido : fila) {
+			output += pedido.listarItens();
+		}
+		output += "\n";
+		return output;
 	}
 }
