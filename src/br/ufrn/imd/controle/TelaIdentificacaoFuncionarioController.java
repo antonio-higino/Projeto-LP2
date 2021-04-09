@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -18,10 +20,20 @@ public class TelaIdentificacaoFuncionarioController {
     private MenuItem menuItemFecharJanela;
 	
 	@FXML
-    private Button botaoEntrar;
+    private Button botaoEntrarMenuFuncionario;
 
     @FXML
-    private Button botaoCadastrar;
+    private Button botaoCadastrarFuncionario;
+    
+    @FXML
+    private TextField textFieldNomeDoFuncionario;
+    
+    @FXML
+    private PasswordField textFieldSenhaDoSistema;
+    
+    @FXML
+    private TextField textFieldResultadoBuscaFuncionario;
+    
 
     @FXML
     void abrirTelaCadastroFuncionario(ActionEvent event) throws IOException {
@@ -38,6 +50,11 @@ public class TelaIdentificacaoFuncionarioController {
     	TelaCadastroFuncionarioController controller = loader.getController();
     	controller.setCadastroFuncionarioStage(cadastroFuncionarioStage);
     	cadastroFuncionarioStage.showAndWait();
+    }
+    
+    @FXML
+    void entrarMenuFuncionario(ActionEvent event) {
+
     }
 
     @FXML

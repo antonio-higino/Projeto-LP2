@@ -7,11 +7,11 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.imd.controle.TelaMenuFuncionarioController">
    <children>
-      <TextArea fx:id="textAreaPedidos" layoutY="30.0" prefHeight="367.0" prefWidth="386.0" />
       <MenuBar layoutY="1.0" prefHeight="26.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="Ajuda">
@@ -21,7 +21,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="textFieldInformarPedido" layoutX="419.0" layoutY="163.0" prefHeight="26.0" prefWidth="140.0" promptText="Informe o ID do pedido" />
-      <Button fx:id="botaoDespacharPedido" layoutX="453.0" layoutY="222.0" mnemonicParsing="false" onAction="#despacharPedido" text="Despachar" />
+      <TextArea fx:id="textAreaPedidos" layoutY="27.0" prefHeight="372.0" prefWidth="372.0" />
+      <TextField fx:id="mostrarSaldoDoCaixa" editable="false" layoutX="440.0" layoutY="298.0" prefHeight="33.0" prefWidth="78.0" />
+      <Button fx:id="botaoGerarSaldoCaixa" layoutX="449.0" layoutY="234.0" mnemonicParsing="false" onAction="#gerarSaldoDoCaixa" prefHeight="34.0" prefWidth="59.0" text="Gerar" />
+      <Text layoutX="406.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescione &quot;Gerar&quot; para mostrar o saldo do caixa." textAlignment="CENTER" wrappingWidth="145.59995117187486">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

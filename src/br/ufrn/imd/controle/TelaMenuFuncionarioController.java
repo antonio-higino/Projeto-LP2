@@ -8,8 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class TelaMenuFuncionarioController {
+	private Stage menuFuncionarioStage;
 	
 	@FXML
     private TextArea textAreaPedidos;
@@ -18,25 +20,24 @@ public class TelaMenuFuncionarioController {
     private MenuItem menuitemFecharJanela;
 
     @FXML
-    private TextField textFieldInformarPedido;
+    private TextField mostrarSaldoDoCaixa;
 
     @FXML
-    private Button botaoDespacharPedido;
+    private Button botaoGerarSaldoCaixa;
 
     @FXML
-    void despacharPedido(ActionEvent event) {
+    void gerarSaldoDoCaixa(ActionEvent event) {
 
     }
-
+    
     @FXML
     void fecharJanela(ActionEvent event) {
-
+    	menuFuncionarioStage.close();
     }
     
     public void preencherPedidos() {
     	Pedido pedido = new Pedido();
-    	
+  
     	textAreaPedidos.setText(pedido.listarItens());
     }
-
 }

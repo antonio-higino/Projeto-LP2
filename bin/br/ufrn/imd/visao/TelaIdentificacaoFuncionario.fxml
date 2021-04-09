@@ -27,18 +27,18 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <Button fx:id="botaoEntrar" layoutX="97.0" layoutY="255.0" mnemonicParsing="false" onAction="#checarFuncionario" prefHeight="75.0" prefWidth="149.0" text="Entrar">
+      <Button fx:id="botaoEntrarMenuFuncionario" layoutX="97.0" layoutY="255.0" mnemonicParsing="false" onAction="#entrarMenuFuncionario" prefHeight="75.0" prefWidth="149.0" text="Entrar">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <TextField layoutX="97.0" layoutY="174.0" promptText="Nome" />
-      <Button fx:id="botaoCadastrar" layoutX="334.0" layoutY="196.0" mnemonicParsing="false" onAction="#abrirTelaCadastroFuncionario" prefHeight="170.0" prefWidth="212.0" text="Cadastrar">
+      <TextField fx:id="textFieldNomeDoFuncionario" layoutX="97.0" layoutY="174.0" promptText="Nome" />
+      <Button fx:id="botaoCadastrarFuncionario" layoutX="334.0" layoutY="196.0" mnemonicParsing="false" onAction="#abrirTelaCadastroFuncionario" prefHeight="170.0" prefWidth="212.0" text="Cadastrar">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <PasswordField layoutX="97.0" layoutY="215.0" promptText="Senha" />
+      <PasswordField fx:id="textFieldSenhaDoSistema" layoutX="97.0" layoutY="215.0" promptText="Senha" />
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
          <menus>
             <Menu mnemonicParsing="false" text="Ajuda">
@@ -48,6 +48,6 @@
             </Menu>
          </menus>
       </MenuBar>
-      <TextField fx:id="textFieldResultadoBuscaFuncionario" layoutX="88.0" layoutY="345.0" prefHeight="29.0" prefWidth="168.0" text="Funcionario não encontrado!" />
+      <TextField fx:id="textFieldResultadoBuscaFuncionario" editable="false" layoutX="88.0" layoutY="345.0" prefHeight="29.0" prefWidth="168.0" />
    </children>
 </AnchorPane>
