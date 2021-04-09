@@ -1,14 +1,15 @@
 package br.ufrn.imd.dao;
 
+import br.ufrn.imd.modelo.Comanda;
+
 public class Banco {
 	
 	private ComandaDAO bancoComandas;
 	private FuncionarioDAO bancoFuncionarios;
 	private Cardapio cardapio;
 	private FilaDaCozinha filaDaCozinha;
-	
 	private double saldoDoCaixa = 0;
-	private String senhaDoSistema = "dupladinamica";
+	private String senhaDoSistema = "dupla";
 	
 	private static Banco banco;
 	

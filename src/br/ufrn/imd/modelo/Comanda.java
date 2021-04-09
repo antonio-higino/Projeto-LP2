@@ -8,6 +8,7 @@ public class Comanda implements CalculoValorTotal {
 	private ArrayList<Pedido> pedidos;
 	private String nomeDoCliente;
 	private double valorTotal = 0;
+	private boolean foiPaga = false;
 	
 	public Comanda() {
 		pedidos = new ArrayList<Pedido>();
@@ -42,6 +43,14 @@ public class Comanda implements CalculoValorTotal {
 		this.valorTotal = valorTotal;
 	}
 	
+	public boolean isFoiPaga() {
+		return foiPaga;
+	}
+
+	public void setFoiPaga(boolean foiPaga) {
+		this.foiPaga = foiPaga;
+	}
+	
 	public void adicionarPedido(Pedido pedido) {
 		pedidos.add(pedido);
 	}
@@ -50,7 +59,6 @@ public class Comanda implements CalculoValorTotal {
 		String output = "";
 		
 		output += "Comanda número " + getId() + ":" + "\n";
-		//output += "Cliente: " + getNomeDoCliente() + "\n";
 		output += "Pedidos desta comanda: " + "\n";
 		
 		for(Pedido pedido : pedidos) {

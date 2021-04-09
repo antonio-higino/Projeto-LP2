@@ -52,6 +52,7 @@ public class TelaPagamentoController {
     			double valorPago = banco.getBancoComandas().getComandaEspecifica(idDaComanda).getValorTotal(); 
     			
     			banco.adicionarSaldo(valorPago);
+    			banco.getBancoComandas().getComandaEspecifica(idDaComanda).setFoiPaga(true);
     			
     			abrirTelaSucessoPagamento();
     			pagamentoStage.close();

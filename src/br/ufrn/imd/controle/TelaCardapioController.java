@@ -166,6 +166,7 @@ public class TelaCardapioController {
 	        		}
 	        		
 	        		banco.getBancoComandas().getComandaEspecifica(idDaComanda).adicionarPedido(pedido);
+	        		banco.getFilaDaCozinha().adicionarPedidoNaFila(pedido);
 	        		
 	        		abrirTelaMostrarPedidoRealizado(pedido);
 	        		cardapioStage.close();

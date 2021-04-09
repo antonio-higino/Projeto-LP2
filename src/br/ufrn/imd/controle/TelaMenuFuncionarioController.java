@@ -21,14 +21,16 @@ public class TelaMenuFuncionarioController {
     private MenuItem menuitemFecharJanela;
 
     @FXML
-    private TextField mostrarSaldoDoCaixa;
+    private TextField textFieldMostrarSaldoDoCaixa;
 
     @FXML
     private Button botaoGerarSaldoCaixa;
 
     @FXML
     void gerarSaldoDoCaixa(ActionEvent event) {
-
+    	Banco banco = Banco.getInstance();
+    	double valor = banco.getSaldoDoCaixa();
+    	textFieldMostrarSaldoDoCaixa.setText(Double.toString(valor));
     }
     
     @FXML
@@ -39,7 +41,7 @@ public class TelaMenuFuncionarioController {
     public void preencherPedidos() {
     	Banco banco = Banco.getInstance();
   
-    	//textAreaPedidos.setText(banco.getFilaDaCozinha().listarPedidos());
+    	textAreaPedidos.setText(banco.getFilaDaCozinha().listarPedidos());
     }
     
     public void setMenuFuncionarioStage(Stage menuFuncionarioStage) {

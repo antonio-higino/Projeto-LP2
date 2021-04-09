@@ -49,7 +49,11 @@ public class TelaIdentificacaoClienteController {
     		int id = Integer.parseInt(input);
     		
     		if(banco.getBancoComandas().buscarComanda(id)) {
-        		abrirTelaMenuCliente();
+    			if(!banco.getBancoComandas().getComandaEspecifica(id).isFoiPaga()) {
+    				abrirTelaMenuCliente();
+    			}else {
+    				textFieldResultadoDaBusca.setText("Comanda não encontrada");
+    			}
         	}else {
         		textFieldResultadoDaBusca.setText("Comanda não encontrada");
         	}

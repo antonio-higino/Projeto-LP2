@@ -15,6 +15,10 @@ public class FilaDaCozinha {
 		fila = new ArrayList<Pedido>();
 	}
 	
+	public void adicionarPedidoNaFila(Pedido pedido) {
+		fila.add(pedido);
+	}
+	
 	public int getContadorParaId() {
 		contadorParaId++;
 		return contadorParaId;

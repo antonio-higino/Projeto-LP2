@@ -72,10 +72,10 @@ public class TelaIdentificacaoFuncionarioController {
 			
 			int id = banco.getBancoFuncionarios().getContadorParaId();
 			
-			Funcionario employer = new Funcionario();
-			employer.setId(id);
-			employer.setNome(input1);
-			banco.getBancoFuncionarios().cadastrarFuncionario(employer);
+			Funcionario employee = new Funcionario();
+			employee.setId(id);
+			employee.setNome(input1);
+			banco.getBancoFuncionarios().cadastrarFuncionario(employee);
 			
 			textFieldResultadoCadastroFuncionario.setText("Funcionario Cadastrado!");
     	}else {

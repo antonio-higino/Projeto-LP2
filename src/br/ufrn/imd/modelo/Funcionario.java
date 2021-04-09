@@ -1,49 +1,27 @@
 package br.ufrn.imd.modelo;
 
-public class Funcionario extends Pessoa {
+public class Funcionario {
 	
-	private String funcao;
-	private int cargaHoraria;
-	private double salario;
+	private int id;
+	private String nome;
 	
 	public Funcionario() {
 		
 	}
 	
-	public String getFuncao() {
-		return funcao;
+	public int getId() {
+		return id;
 	}
 	
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
+	public void setId(int id) {
+		this.id = id;
 	}
 	
-	public int getCargaHoraria() {
-		return cargaHoraria;
+	public String getNome() {
+		return nome;
 	}
 	
-	public void setCargaHoraria(int cargaHoraria) {
-		this.cargaHoraria = cargaHoraria;
-	}
-	
-	public double getSalario() {
-		return salario;
-	}
-	
-	public void setSalario(double salario) {
-		this.salario = salario;
-	}
-	
-	public void atribuiEspecificacoes() {
-		if(getFuncao() == "Garçom") {
-			setSalario(400.89);
-			setCargaHoraria(8);
-		}else if(getFuncao() == "Caixa") {
-			setSalario(350);
-			setCargaHoraria(12);
-		}else if(getFuncao() == "Cozinheiro") {
-			setSalario(550);
-			setCargaHoraria(12);
-		}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }
