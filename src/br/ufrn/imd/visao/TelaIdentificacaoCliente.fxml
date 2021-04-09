@@ -22,7 +22,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="306.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se não, preencha abaixo, clique em Gerar comanda e Entrar com nova comanda" textAlignment="CENTER" wrappingWidth="276.13671875">
+      <Text layoutX="306.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se não, preencha seu nome abaixo e clique em Gerar comanda" textAlignment="CENTER" wrappingWidth="276.13671875">
          <font>
             <Font size="20.0" />
          </font>
@@ -38,7 +38,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="botaoGerarComanda" layoutX="355.0" layoutY="261.0" mnemonicParsing="false" onAction="#gerarNovaComanda" prefHeight="40.0" prefWidth="179.0" text="Gerar comanda">
+      <Button fx:id="botaoGerarComanda" layoutX="355.0" layoutY="261.0" mnemonicParsing="false" onAction="#gerarNovaComanda" prefHeight="88.0" prefWidth="179.0" text="Gerar comanda">
          <font>
             <Font size="22.0" />
          </font>
@@ -59,11 +59,6 @@
          </font>
       </Label>
       <TextField fx:id="textFieldResultadoDaBusca" editable="false" layoutX="80.0" layoutY="361.0" prefHeight="25.0" prefWidth="179.0" />
-      <TextField fx:id="textFieldIdDaComandaGerada" editable="false" layoutX="355.0" layoutY="307.0" prefHeight="25.0" prefWidth="179.0" />
-      <Button fx:id="botaoEntrarNovaComanda" layoutX="324.0" layoutY="337.0" mnemonicParsing="false" onAction="#chamarAbrirMenuCliente" prefHeight="55.0" prefWidth="244.0" text="Entrar com nova comanda">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
+      <TextField fx:id="textFieldIdDaComandaGerada" editable="false" layoutX="355.0" layoutY="361.0" prefHeight="25.0" prefWidth="179.0" />
    </children>
 </AnchorPane>

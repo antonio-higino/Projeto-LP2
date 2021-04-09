@@ -17,7 +17,6 @@ import javafx.stage.Stage;
 public class TelaIdentificacaoClienteController {
 	
 	private Stage clienteStage;
-	private boolean novaComandaGerada = false;
 	
 	@FXML
     private Button botaoEntrar;
@@ -39,16 +38,6 @@ public class TelaIdentificacaoClienteController {
     
     @FXML
     private TextField textFieldIdDaComandaGerada;
-    
-    @FXML
-    private Button botaoEntrarNovaComanda;
-
-    @FXML
-    void chamarAbrirMenuCliente(ActionEvent event) throws IOException {
-    	if(novaComandaGerada) {
-    		abrirTelaMenuCliente();
-    	}
-    }
 
     @FXML
     void checarExistenciaComanda(ActionEvent event) throws IOException {
@@ -92,9 +81,7 @@ public class TelaIdentificacaoClienteController {
 			
 			banco.getBancoComandas().cadastrarComanda(comanda);
 			
-			textFieldIdDaComandaGerada.setText("O número da sua comanda é " + id);
-			
-			novaComandaGerada = true;
+			textFieldIdDaComandaGerada.setText("A sua comanda é número " + id);
     	}else {
     		textFieldIdDaComandaGerada.setText("Por favor preencha seu nome");
     	}
@@ -105,8 +92,6 @@ public class TelaIdentificacaoClienteController {
 	}
 	
 	void abrirTelaMenuCliente() throws IOException {
-		//System.out.println("Abrindo");
-		
 		FXMLLoader loader = new FXMLLoader();
     	loader.setLocation(TelaMenuClienteController.class.getResource("/br/ufrn/imd/visao/TelaMenuCliente.fxml"));
     	AnchorPane page = (AnchorPane) loader.load();

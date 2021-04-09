@@ -52,8 +52,9 @@ public class Pedido implements CalculoValorTotal {
 	public String listarItens() {
 		String output = "";
 		
-		output += "Pedido número " + getId() + ":" + "\n";
+		output += "--Pedido número " + getId() + "--" + "\n";
 		output += "Cliente: " + getNomeDoCliente() + "\n";
+		output += "Itens:" + "\n";
 		
 		for(Item item : itens) {
 			output += item.getNome() + "\n";

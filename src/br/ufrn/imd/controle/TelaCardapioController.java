@@ -1,15 +1,20 @@
 package br.ufrn.imd.controle;
 
+import java.io.IOException;
+
 import br.ufrn.imd.dao.Banco;
 import br.ufrn.imd.dao.Cardapio;
 import br.ufrn.imd.modelo.Pedido;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class TelaCardapioController {
@@ -88,7 +93,7 @@ public class TelaCardapioController {
     }
 
     @FXML
-    void finalizarPedido(ActionEvent event) {
+    void finalizarPedido(ActionEvent event) throws IOException {
     	try {
     		Banco banco = Banco.getInstance();
     		//String input = textFieldIdDaComanda.getText();
@@ -161,7 +166,7 @@ public class TelaCardapioController {
 	        		}
 	        		
 	        		banco.getBancoComandas().getComandaEspecifica(idDaComanda).adicionarPedido(pedido);
-	        		banco.getBancoComandas().getComandaEspecifica(idDaComanda).listarPedidos();
+	        		abrirTelaMostrarPedidoRealizado(pedido);
 	        		cardapioStage.close();
 	        		
     			}else {
@@ -229,8 +234,21 @@ public class TelaCardapioController {
     	}
     }
     
-    private void abrirTelaMostrarPedidoRealizado(Pedido pedido) {
+    private void abrirTelaMostrarPedidoRealizado(Pedido pedido) throws IOException {
+    	FXMLLoader loader = new FXMLLoader();
+    	loader.setLocation(TelaMostrarPedidoRealizadoController.class.getResource("/br/ufrn/imd/visao/TelaMostrarPedidoRealizado.fxml"));
+    	AnchorPane page = (AnchorPane) loader.load();
     	
+    	Stage pedidoStage = new Stage();
+    	pedidoStage.setTitle("Pedido Realizado");
+    	pedidoStage.setResizable(false);
+    	Scene scene = new Scene(page);
+    	pedidoStage.setScene(scene);
+    	
+    	TelaMostrarPedidoRealizadoController controller = loader.getController();
+    	controller.setPedidoStage(pedidoStage);
+    	controller.preencherTextAreaMostrarPedido(pedido.listarItens());
+    	pedidoStage.showAndWait();
     }
 
 	public void setCardapioStage(Stage cardapioStage) {
