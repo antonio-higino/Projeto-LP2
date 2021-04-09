@@ -7,6 +7,7 @@ public class Banco {
 	private Cardapio cardapio;
 	private FilaDaCozinha filaDaCozinha;
 	
+	private double saldoDoCaixa = 0;
 	private String senhaDoSistema = "DuplaDinamica";
 	
 	private static Banco banco;
@@ -40,6 +41,18 @@ public class Banco {
 
 	public FilaDaCozinha getFilaDaCozinha() {
 		return filaDaCozinha;
+	}
+
+	public double getSaldoDoCaixa() {
+		return saldoDoCaixa;
+	}
+	
+	public void setSaldoDoCaixa(double saldoDoCaixa) {
+		this.saldoDoCaixa = saldoDoCaixa;
+	}
+
+	public void adicionarSaldo(double pagamento) {
+		setSaldoDoCaixa(getSaldoDoCaixa() + pagamento);
 	}
 
 	public String getSenhaDoSistema() {
