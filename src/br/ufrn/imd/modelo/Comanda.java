@@ -65,7 +65,7 @@ public class Comanda implements CalculoValorTotal {
 			output += pedido.listarItens();
 		}
 
-		output += "Valor Total da comanda: " + getValorTotal() + "\n";
+		output += "Valor Total da comanda: R$ " + getValorTotal() + "\n";
 		
 		return output;
 	}
