@@ -98,7 +98,7 @@ public class TelaCardapioController {
     		Banco banco = Banco.getInstance();
     		int idDaComanda = Integer.parseInt(textFieldIdDaComanda.getText());
     		
-    		if(banco.getBancoComandas().buscarComanda(idDaComanda)) {
+    		if(banco.getBancoComandas().buscarComanda(idDaComanda) && !banco.getBancoComandas().getComandaEspecifica(idDaComanda).isFoiPaga()) {
     			
     			if(!checarPedidoVazio()) {
 	        		Pedido pedido = new Pedido();

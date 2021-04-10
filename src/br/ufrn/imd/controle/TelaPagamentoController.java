@@ -43,7 +43,7 @@ public class TelaPagamentoController {
     		
     		int idDaComanda = Integer.parseInt(textFieldIdDaComanda.getText());
     		
-    		if(banco.getBancoComandas().buscarComanda(idDaComanda)) {
+    		if(banco.getBancoComandas().buscarComanda(idDaComanda) && !banco.getBancoComandas().getComandaEspecifica(idDaComanda).isFoiPaga()) {
     			
     			String output = banco.getBancoComandas().getComandaEspecifica(idDaComanda).listarPedidos();
     			
@@ -78,7 +78,7 @@ public class TelaPagamentoController {
     		
     		int idDaComanda = Integer.parseInt(textFieldIdDaComanda.getText());
     		
-    		if(banco.getBancoComandas().buscarComanda(idDaComanda)) {
+    		if(banco.getBancoComandas().buscarComanda(idDaComanda) && !banco.getBancoComandas().getComandaEspecifica(idDaComanda).isFoiPaga()) {
     			
     			String output = banco.getBancoComandas().getComandaEspecifica(idDaComanda).listarPedidos();
     			

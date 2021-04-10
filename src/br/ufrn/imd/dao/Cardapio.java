@@ -54,76 +54,76 @@ public class Cardapio {
 	}
 	
 	public void preencherCardapio() {
-		Prato frango = new Prato();
+		Item frango = new Prato();
 		frango.setId(1);
 		frango.setNome("Frango Grelhado");
 		frango.setPreco(22.50);
-		frango.setQuantidadeDePessoasServida(1);
-		frango.setDescricao("Acompanha arroz branco e purê de batata.");
-		frango.setContemGluten(false);
+		((Prato)frango).setQuantidadeDePessoasServida(1);
+		((Prato)frango).setDescricao("Acompanha arroz branco e purê de batata.");
+		((Prato)frango).setContemGluten(false);
 		menu.add(frango);
 		
-		Prato carne = new Prato();
+		Item carne = new Prato();
 		carne.setId(2);
 		carne.setNome("Filé Mignon");
 		carne.setPreco(27);
-		carne.setQuantidadeDePessoasServida(1);
-		carne.setDescricao("Acompanha feijão preto e arroz branco.");
-		carne.setContemGluten(false);
+		((Prato)carne).setQuantidadeDePessoasServida(1);
+		((Prato)carne).setDescricao("Acompanha feijão preto e arroz branco.");
+		((Prato)carne).setContemGluten(false);
 		menu.add(carne);
 		
-		Prato peixe = new Prato();
+		Item peixe = new Prato();
 		peixe.setId(3);
 		peixe.setNome("Salmão com Alcaparras");
 		peixe.setPreco(53.50);
-		peixe.setQuantidadeDePessoasServida(2);
-		peixe.setDescricao("Acompanha arroz branco e batata doce.");
-		peixe.setContemGluten(false);
+		((Prato)peixe).setQuantidadeDePessoasServida(2);
+		((Prato)peixe).setDescricao("Acompanha arroz branco e batata doce.");
+		((Prato)peixe).setContemGluten(false);
 		menu.add(peixe);
 		
-		Prato hamburger = new Prato();
+		Item hamburger = new Prato();
 		hamburger.setId(4);
 		hamburger.setNome("Hamburger da Casa");
 		hamburger.setPreco(18);
-		hamburger.setQuantidadeDePessoasServida(1);
-		hamburger.setDescricao("Acompanha batata frita e molho barbecue");
-		hamburger.setContemGluten(true);
+		((Prato)hamburger).setQuantidadeDePessoasServida(1);
+		((Prato)hamburger).setDescricao("Acompanha batata frita e molho barbecue");
+		((Prato)hamburger).setContemGluten(true);
 		menu.add(hamburger);
 		
-		Bebida agua = new Bebida();
+		Item agua = new Bebida();
 		agua.setId(5);
 		agua.setNome("Água Mineral Garrafa");
 		agua.setPreco(3.50);
-		agua.setQuantidadeDeMl(500);
-		agua.setDiet(false);
-		agua.setLight(false);
+		((Bebida)agua).setQuantidadeDeMl(500);
+		((Bebida)agua).setDiet(false);
+		((Bebida)agua).setLight(false);
 		menu.add(agua);
 		
-		Bebida suco = new Bebida();
+		Item suco = new Bebida();
 		suco.setId(6);
 		suco.setNome("Suco de Laranja Copo");
 		suco.setPreco(5.50);
-		suco.setQuantidadeDeMl(300);
-		suco.setDiet(false);
-		suco.setLight(false);
+		((Bebida)suco).setQuantidadeDeMl(300);
+		((Bebida)suco).setDiet(false);
+		((Bebida)suco).setLight(false);
 		menu.add(suco);
 		
-		Bebida coca = new Bebida();
+		Item coca = new Bebida();
 		coca.setId(7);
 		coca.setNome("Coca-Cola Lata");
 		coca.setPreco(4.50);
-		coca.setQuantidadeDeMl(350);
-		coca.setDiet(false);
-		coca.setLight(false);
+		((Bebida)coca).setQuantidadeDeMl(350);
+		((Bebida)coca).setDiet(false);
+		((Bebida)coca).setLight(false);
 		menu.add(coca);
 		
-		Bebida guaranaDiet = new Bebida();
+		Item guaranaDiet = new Bebida();
 		guaranaDiet.setId(8);
 		guaranaDiet.setNome("Guaraná Diet Lata");
 		guaranaDiet.setPreco(5);
-		guaranaDiet.setQuantidadeDeMl(350);
-		guaranaDiet.setDiet(true);
-		guaranaDiet.setLight(false);
+		((Bebida)guaranaDiet).setQuantidadeDeMl(350);
+		((Bebida)guaranaDiet).setDiet(true);
+		((Bebida)guaranaDiet).setLight(false);
 		menu.add(guaranaDiet);
 	}
 }

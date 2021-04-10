@@ -48,7 +48,7 @@
             </Menu>
          </menus>
       </MenuBar>
-      <TextField fx:id="textFieldResultados" alignment="CENTER" editable="false" layoutX="180.0" layoutY="351.0" prefHeight="26.0" prefWidth="237.0" />
+      <TextField fx:id="textFieldResultados" editable="false" layoutX="154.0" layoutY="351.0" prefHeight="26.0" prefWidth="290.0" />
       <TextField fx:id="textFieldNomeCadastroDoFuncionario" layoutX="377.0" layoutY="226.0" promptText="Nome" />
       <Text layoutX="124.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insira a senha para se registrar e logar no sistema.">
          <font>
