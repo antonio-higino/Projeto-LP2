@@ -7,7 +7,7 @@ public class Banco {
 	private Cardapio cardapio;
 	private FilaDaCozinha filaDaCozinha;
 	private double saldoDoCaixa = 0;
-	private String senhaDoSistema = "dupla";
+	private String senhaDoSistema = "dupladinamica";
 	
 	private static Banco banco;
 	

@@ -14,7 +14,6 @@ public class ComandaDAO {
 	
 	public void cadastrarComanda(Comanda comanda) {
 		comandas.add(comanda);
-		System.out.println("Comanda cadastrada com sucesso");
 	}
 	
 	public int getContadorParaId() {

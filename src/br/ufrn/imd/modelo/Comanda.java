@@ -64,10 +64,8 @@ public class Comanda implements CalculoValorTotal {
 		for(Pedido pedido : pedidos) {
 			output += pedido.listarItens();
 		}
-		
-		output += "\n";
+
 		output += "Valor Total da comanda: " + getValorTotal() + "\n";
-		output += "\n";
 		
 		return output;
 	}

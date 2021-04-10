@@ -96,7 +96,6 @@ public class TelaCardapioController {
     void finalizarPedido(ActionEvent event) throws IOException {
     	try {
     		Banco banco = Banco.getInstance();
-    		//String input = textFieldIdDaComanda.getText();
     		int idDaComanda = Integer.parseInt(textFieldIdDaComanda.getText());
     		
     		if(banco.getBancoComandas().buscarComanda(idDaComanda)) {

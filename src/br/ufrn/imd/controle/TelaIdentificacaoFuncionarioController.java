@@ -35,13 +35,7 @@ public class TelaIdentificacaoFuncionarioController {
     private TextField textFieldNomeCadastroDoFuncionario;
     
     @FXML
-    private TextField textFieldFuncaoDoFuncionario;
-    
-    @FXML
-    private TextField textFieldResultadoBuscaFuncionario;
-    
-    @FXML
-    private TextField textFieldResultadoCadastroFuncionario;
+    private TextField textFieldResultados;
     
     @FXML
     private PasswordField textFieldSenhaDoSistema;
@@ -56,28 +50,34 @@ public class TelaIdentificacaoFuncionarioController {
 		if(banco.getBancoFuncionarios().buscarFuncionario(input1) && banco.getSenhaDoSistema().equals(input2)) {
     		entrarMenuFuncionario();
     	}else {
-    		textFieldResultadoBuscaFuncionario.setText("Funcionário não encontrado e/ou entrada inválida!");
+    		textFieldResultados.setText("Funcionário não encontrado e/ou entrada inválida!");
     	}
     }
     
     @FXML
     void cadastrarFuncionario(ActionEvent event) {
-    	String input1 = textFieldNomeCadastroDoFuncionario.getText();
-    	String input2 = textFieldFuncaoDoFuncionario.getText();
+    	Banco banco = Banco.getInstance();
     	
-    	if(!input1.equals("") || input2.equals("")) {
-			Banco banco = Banco.getInstance();
-			
-			int id = banco.getBancoFuncionarios().getContadorParaId();
-			
-			Funcionario employee = new Funcionario();
-			employee.setId(id);
-			employee.setNome(input1);
-			banco.getBancoFuncionarios().cadastrarFuncionario(employee);
-			
-			textFieldResultadoCadastroFuncionario.setText("Funcionario Cadastrado!");
+    	String input = textFieldNomeCadastroDoFuncionario.getText();
+    	String input2 = textFieldSenhaDoSistema.getText();
+    	
+    	if(banco.getSenhaDoSistema().equals(input2)) {
+    		
+	    	if(!input.equals("")) {
+				
+				int id = banco.getBancoFuncionarios().getContadorParaId();
+				
+				Funcionario employee = new Funcionario();
+				employee.setId(id);
+				employee.setNome(input);
+				banco.getBancoFuncionarios().cadastrarFuncionario(employee);
+				
+				textFieldResultados.setText("Funcionario Cadastrado!");
+	    	}else {
+	    		textFieldResultados.setText("Por favor informe seu nome!");
+	    	}
     	}else {
-    		textFieldResultadoCadastroFuncionario.setText("Por favor preencha os campos!");
+    		textFieldResultados.setText("Senha inválida!");
     	}
     }
     

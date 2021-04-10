@@ -54,10 +54,10 @@ public class Pedido implements CalculoValorTotal {
 		
 		output += "--Pedido número " + getId() + "--" + "\n";
 		output += "Cliente: " + getNomeDoCliente() + "\n";
-		output += "Itens:" + "\n";
+		output += "  Itens:" + "\n";
 		
 		for(Item item : itens) {
-			output += item.getNome() + "\n";
+			output += "   ->" + item.getNome() + "\n";
 		}
 		output += "\n";
 		
